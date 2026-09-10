@@ -336,84 +336,279 @@
         </div>
     </section>
 
-    <!-- Quiz Section -->
-    <section id="quiz">
-        <h2>Heritage Quiz</h2>
-        <div class="quiz-container">
-            <form id="heritage-quiz">
-                
-                <!-- Question 1 -->
-                <div class="quiz-question">
-                    <h3>1. Which monument is known as the "Symbol of Love"?</h3>
-                    <div class="options">
-                        <label><input type="radio" name="q1" value="a"> Qutub Minar</label>
-                        <label><input type="radio" name="q1" value="b"> Taj Mahal</label>
-                        <label><input type="radio" name="q1" value="c"> Hawa Mahal</label>
-                    </div>
+     <!-- Quiz Section -->
+    <!-- Enhanced Heritage Quiz Section -->
+<section id="quiz">
+    <h2>Interactive Heritage Quiz</h2>
+    <div class="quiz-container">
+        <form id="heritage-quiz">
+            
+            <!-- Question 1 -->
+            <div class="quiz-question" id="group-q1">
+                <h3>1. Who constructed the Moth Ki Mosque in Delhi during the Lodi Dynasty period?</h3>
+                <div class="options">
+                    <label id="lbl-q1-a"><input type="radio" name="q1" value="a"> Sikandar Lodi</label>
+                    <label id="lbl-q1-b"><input type="radio" name="q1" value="b"> Wazir Miya Bhoiya</label>
+                    <label id="lbl-q1-c"><input type="radio" name="q1" value="c"> Bahlul Lodi</label>
+                    <label id="lbl-q1-d"><input type="radio" name="q1" value="d"> Ibrahim Lodi</label>
                 </div>
+            </div>
 
-                <!-- Question 2 -->
-                <div class="quiz-question">
-                    <h3>2. Classical dance form 'Kathakali' originated from which state?</h3>
-                    <div class="options">
-                        <label><input type="radio" name="q2" value="a"> Tamil Nadu</label>
-                        <label><input type="radio" name="q2" value="b"> Kerala</label>
-                        <label><input type="radio" name="q2" value="c"> Odisha</label>
-                    </div>
+            <!-- Question 2 -->
+            <div class="quiz-question" id="group-q2">
+                <h3>2. In which city is the iconic Taj Mahal located?</h3>
+                <div class="options">
+                    <label id="lbl-q2-a"><input type="radio" name="q2" value="a"> Delhi</label>
+                    <label id="lbl-q2-b"><input type="radio" name="q2" value="b"> Jaipur</label>
+                    <label id="lbl-q2-c"><input type="radio" name="q2" value="c"> Agra</label>
+                    <label id="lbl-q2-d"><input type="radio" name="q2" value="d"> Lucknow</label>
                 </div>
+            </div>
 
-                <!-- Question 3 -->
-                <div class="quiz-question">
-                    <h3>3. What is the festival of colors in India called?</h3>
-                    <div class="options">
-                        <label><input type="radio" name="q3" value="a"> Diwali</label>
-                        <label><input type="radio" name="q3" value="b"> Holi</label>
-                        <label><input type="radio" name="q3" value="c"> Navratri</label>
-                    </div>
+            <!-- Question 3 -->
+            <div class="quiz-question" id="group-q3">
+                <h3>3. In which Indian state are the famous Khajuraho Group of Temples situated?</h3>
+                <div class="options">
+                    <label id="lbl-q3-a"><input type="radio" name="q3" value="a"> Rajasthan</label>
+                    <label id="lbl-q3-b"><input type="radio" name="q3" value="b"> Uttar Pradesh</label>
+                    <label id="lbl-q3-c"><input type="radio" name="q3" value="c"> Odisha</label>
+                    <label id="lbl-q3-d"><input type="radio" name="q3" value="d"> Madhya Pradesh</label>
                 </div>
+            </div>
 
+            <!-- Question 4 -->
+            <div class="quiz-question" id="group-q4">
+                <h3>4. The world-renowned Sun Temple, famous for its chariot-shaped structure, is located at:</h3>
+                <div class="options">
+                    <label id="lbl-q4-a"><input type="radio" name="q4" value="a"> Puri, Odisha</label>
+                    <label id="lbl-q4-b"><input type="radio" name="q4" value="b"> Konark, Odisha</label>
+                    <label id="lbl-q4-c"><input type="radio" name="q4" value="c"> Hampi, Karnataka</label>
+                    <label id="lbl-q4-d"><input type="radio" name="q4" value="d"> Madurai, Tamil Nadu</label>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="quiz-question" id="group-q5">
+                <h3>5. The ancient Hampi Ruins, representing the capital of the Vijayanagara Empire, are located in which state?</h3>
+                <div class="options">
+                    <label id="lbl-q5-a"><input type="radio" name="q5" value="a"> Telangana</label>
+                    <label id="lbl-q5-b"><input type="radio" name="q5" value="b"> Andhra Pradesh</label>
+                    <label id="lbl-q5-c"><input type="radio" name="q5" value="c"> Karnataka</label>
+                    <label id="lbl-q5-d"><input type="radio" name="q5" value="d"> Kerala</label>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="quiz-question" id="group-q6">
+                <h3>6. According to legend, how was the construction of the Moth Ki Mosque funded?</h3>
+                <div class="options">
+                    <label id="lbl-q6-a"><input type="radio" name="q6" value="a"> Royal Treasury tax collections</label>
+                    <label id="lbl-q6-b"><input type="radio" name="q6" value="b"> Earnings from cultivating a single moth seed</label>
+                    <label id="lbl-q6-c"><input type="radio" name="q6" value="c"> Trade profits from the Silk Route</label>
+                    <label id="lbl-q6-d"><input type="radio" name="q6" value="d"> Donations from foreign pilgrims</label>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="quiz-question" id="group-q7">
+                <h3>7. Where is the Golden Temple (Sri Harmandir Sahib) located?</h3>
+                <div class="options">
+                    <label id="lbl-q7-a"><input type="radio" name="q7" value="a"> Amritsar, Punjab</label>
+                    <label id="lbl-q7-b"><input type="radio" name="q7" value="b"> Ludhiana, Punjab</label>
+                    <label id="lbl-q7-c"><input type="radio" name="q7" value="c"> Anandpur Sahib, Punjab</label>
+                    <label id="lbl-q7-d"><input type="radio" name="q7" value="d"> Chandigarh</label>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="quiz-question" id="group-q8">
+                <h3>8. In which year was the Moth Ki Mosque built?</h3>
+                <div class="options">
+                    <label id="lbl-q8-a"><input type="radio" name="q8" value="a"> 1451</label>
+                    <label id="lbl-q8-b"><input type="radio" name="q8" value="b"> 1505</label>
+                    <label id="lbl-q8-c"><input type="radio" name="q8" value="c"> 1526</label>
+                    <label id="lbl-q8-d"><input type="radio" name="q8" value="d"> 1556</label>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="quiz-question" id="group-q9">
+                <h3>9. Which famous historic 19th-century Urdu poet's residence (haveli) is located in Old Delhi?</h3>
+                <div class="options">
+                    <label id="lbl-q9-a"><input type="radio" name="q9" value="a"> Allama Iqbal</label>
+                    <label id="lbl-q9-b"><input type="radio" name="q9" value="b"> Mir Taqi Mir</label>
+                    <label id="lbl-q9-c"><input type="radio" name="q9" value="c"> Mirza Ghalib</label>
+                    <label id="lbl-q9-d"><input type="radio" name="q9" value="d"> Bahadur Shah Zafar</label>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="quiz-question" id="group-q10">
+                <h3>10. The Chor Minar, a 13th-century stone minaret with 225 holes, is located in which city?</h3>
+                <div class="options">
+                    <label id="lbl-q10-a"><input type="radio" name="q10" value="a"> Delhi</label>
+                    <label id="lbl-q10-b"><input type="radio" name="q10" value="b"> Agra</label>
+                    <label id="lbl-q10-c"><input type="radio" name="q10" value="c"> Lahore</label>
+                    <label id="lbl-q10-d"><input type="radio" name="q10" value="d"> Hyderabad</label>
+                </div>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="quiz-question" id="group-q11">
+                <h3>11. The Red Fort and Qutub Minar are historic UNESCO World Heritage sites located in:</h3>
+                <div class="options">
+                    <label id="lbl-q11-a"><input type="radio" name="q11" value="a"> Jaipur</label>
+                    <label id="lbl-q11-b"><input type="radio" name="q11" value="b"> Agra</label>
+                    <label id="lbl-q11-c"><input type="radio" name="q11" value="c"> Delhi</label>
+                    <label id="lbl-q11-d"><input type="radio" name="q11" value="d"> Fatehpur Sikri</label>
+                </div>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="quiz-question" id="group-q12">
+                <h3>12. What unique architectural feature is seen at the entry gateway of the Moth Ki Mosque?</h3>
+                <div class="options">
+                    <label id="lbl-q12-a"><input type="radio" name="q12" value="a"> Purely Gothic arches</label>
+                    <label id="lbl-q12-b"><input type="radio" name="q12" value="b"> A Hindu arch enclosed within a Muslim arch</label>
+                    <label id="lbl-q12-c"><input type="radio" name="q12" value="c"> A wooden colonnade roof</label>
+                    <label id="lbl-q12-d"><input type="radio" name="q12" value="d"> Roman-style Corinthian pillars</label>
+                </div>
+            </div>
+
+            <!-- Question 13 -->
+            <div class="quiz-question" id="group-q13">
+                <h3>13. Which materials were primarily used to embellish the walls of the Moth Ki Mosque?</h3>
+                <div class="options">
+                    <label id="lbl-q13-a"><input type="radio" name="q13" value="a"> Red sandstone, white marble, and glazed tiles</label>
+                    <label id="lbl-q13-b"><input type="radio" name="q13" value="b"> Granite and bronze plaques</label>
+                    <label id="lbl-q13-c"><input type="radio" name="q13" value="c"> Pure gold leafing and terracotta</label>
+                    <label id="lbl-q13-d"><input type="radio" name="q13" value="d"> Black basalt and limestone</label>
+                </div>
+            </div>
+
+            <!-- Question 14 -->
+            <div class="quiz-question" id="group-q14">
+                <h3>14. The tombs of 'Bade Khan' and 'Chote Khan' represent exemplary architecture from which era in Delhi?</h3>
+                <div class="options">
+                    <label id="lbl-q14-a"><input type="radio" name="q14" value="a"> Lodi/Sultanate period</label>
+                    <label id="lbl-q14-b"><input type="radio" name="q14" value="b"> Maratha Empire</label>
+                    <label id="lbl-q14-c"><input type="radio" name="q14" value="c"> British Raj period</label>
+                    <label id="lbl-q14-d"><input type="radio" name="q14" value="d"> Chola Dynasty</label>
+                </div>
+            </div>
+
+            <!-- Question 15 -->
+            <div class="quiz-question" id="group-q15">
+                <h3>15. Traditional Mughal period gardens frequently featured decorative water cascades known as:</h3>
+                <div class="options">
+                    <label id="lbl-q15-a"><input type="radio" name="q15" value="a"> Baoli</label>
+                    <label id="lbl-q15-b"><input type="radio" name="q15" value="b"> Jharna (Waterfalls/Fountains)</label>
+                    <label id="lbl-q15-c"><input type="radio" name="q15" value="c"> Johad</label>
+                    <label id="lbl-q15-d"><input type="radio" name="q15" value="d"> Kund</label>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-top: 15px;">
                 <button type="button" class="quiz-btn" onclick="checkQuiz()">Submit Quiz</button>
-            </form>
-            <div id="quiz-result"></div>
-        </div>
-    </section>
+                <button type="button" class="quiz-btn" style="background-color: #7f8c8d;" onclick="resetQuiz()">Reset</button>
+            </div>
+        </form>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Indian Culture & Heritage Portal. All Rights Reserved.</p>
-    </footer>
+        <div id="quiz-result" style="margin-top: 15px; font-weight: bold; font-size: 1.2rem;"></div>
+    </div>
+</section>
 
-    <!-- JavaScript for Quiz Functionality -->
-    <script>
-        function checkQuiz() {
-            // Correct answers definition
-            const answers = {
-                q1: 'b',
-                q2: 'b',
-                q3: 'b'
-            };
+<!-- Additional CSS Styles for Quiz Feedback -->
+<style>
+    .correct-ans {
+        background-color: #27ae60 !important;
+        color: white !important;
+        font-weight: bold;
+    }
+    .wrong-ans {
+        background-color: #e74c3c !important;
+        color: white !important;
+    }
+</style>
 
-            let score = 0;
-            let totalQuestions = Object.keys(answers).length;
+<!-- Complete JavaScript Code -->
+<script>
+    const answers = {
+        q1: 'b',
+        q2: 'c',
+        q3: 'd',
+        q4: 'b',
+        q5: 'c',
+        q6: 'b',
+        q7: 'a',
+        q8: 'b',
+        q9: 'c',
+        q10: 'a',
+        q11: 'c',
+        q12: 'b',
+        q13: 'a',
+        q14: 'a',
+        q15: 'b'
+    };
 
-            const form = document.forms['heritage-quiz'];
+    function checkQuiz() {
+        let score = 0;
+        let totalQuestions = Object.keys(answers).length;
+        const form = document.forms['heritage-quiz'];
 
-            for (let key in answers) {
-                const selectedOption = form[key].value;
-                if (selectedOption === answers[key]) {
-                    score++;
-                }
+        // Clear previous styles
+        resetStyles();
+
+        let answeredAll = true;
+
+        for (let key in answers) {
+            const selectedOption = form[key].value;
+            if (!selectedOption) {
+                answeredAll = false;
+                continue;
             }
 
-            const resultDiv = document.getElementById('quiz-result');
-            resultDiv.innerHTML = `You scored ${score} out of ${totalQuestions}!`;
-            
-            if (score === totalQuestions) {
-                resultDiv.style.color = 'green';
+            const selectedLabel = document.getElementById(`lbl-${key}-${selectedOption}`);
+            const correctLabel = document.getElementById(`lbl-${key}-${answers[key]}`);
+
+            if (selectedOption === answers[key]) {
+                score++;
+                selectedLabel.classList.add('correct-ans');
             } else {
-                resultDiv.style.color = '#d35400';
+                selectedLabel.classList.add('wrong-ans');
+                correctLabel.classList.add('correct-ans'); // Highlight correct answer
             }
         }
-    </script>
+
+        const resultDiv = document.getElementById('quiz-result');
+        if (!answeredAll) {
+            resultDiv.style.color = '#e67e22';
+            resultDiv.innerHTML = `Please answer all questions! Current Score: ${score}/${totalQuestions}`;
+            return;
+        }
+
+        resultDiv.innerHTML = `You scored ${score} out of ${totalQuestions}!`;
+        if (score === totalQuestions) {
+            resultDiv.style.color = '#27ae60';
+            resultDiv.innerHTML += " 🎉 Excellent! Perfect score!";
+        } else {
+            resultDiv.style.color = '#d35400';
+            resultDiv.innerHTML += " Keep learning about Indian heritage!";
+        }
+    }
+
+    function resetStyles() {
+        const labels = document.querySelectorAll('.options label');
+        labels.forEach(lbl => {
+            lbl.classList.remove('correct-ans', 'wrong-ans');
+        });
+    }
+
+    function resetQuiz() {
+        document.forms['heritage-quiz'].reset();
+        resetStyles();
+        document.getElementById('quiz-result').innerHTML = '';
+    }
+</script>
 </body>
 </html>

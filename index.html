@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Culture & Heritage</title>
+    <style>
+        /* CSS STYLES */
+        :root {
+            --primary-color: #d35400; /* Saffron/Terracotta tone */
+            --secondary-color: #27ae60; /* Green tone */
+            --dark-color: #2c3e50;
+            --light-color: #fcfbfa;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-color);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav h1 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 15px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        /* Sections General */
+        section {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 8px auto 0;
+        }
+
+        /* Photo Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 10px;
+            background: white;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Video Section */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Quiz Section */
+        .quiz-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+
+        .quiz-question h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+            padding: 8px 12px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .options label:hover {
+            background: #e0e0e0;
+        }
+
+        .quiz-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .quiz-btn:hover {
+            background: #b84300;
+        }
+
+        #quiz-result {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+            }
+            nav ul {
+                margin-top: 10px;
+            }
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <h1>Incredible India</h1>
+            <ul>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h2>Explore Indian Culture & Heritage</h2>
+        <p>A journey through thousands of years of rich history, architectural marvels, traditions, and arts.</p>
+    </div>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery">
+        <h2>Heritage Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&q=80" alt="Taj Mahal">
+                <div class="gallery-caption">Taj Mahal, Agra</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600100397608-f010e423b971?auto=format&fit=crop&w=600&q=80" alt="Varanasi Ghats">
+                <div class="gallery-caption">Varanasi Ghats</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80" alt="Jaipur Palace">
+                <div class="gallery-caption">Hawa Mahal, Jaipur</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=600&q=80" alt="South Indian Temple">
+                <div class="gallery-caption">Meenakshi Temple, Madurai</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="videos">
+        <h2>Featured Videos</h2>
+        <div class="video-grid">
+            <!-- Replace YouTube Embed URLs with your desired video links -->
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/35NPszs1374" title="Indian Cultural Video 1" allowfullscreen></iframe>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/19R2R86O58g" title="Indian Cultural Video 2" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz">
+        <h2>Heritage Quiz</h2>
+        <div class="quiz-container">
+            <form id="heritage-quiz">
+                
+                <!-- Question 1 -->
+                <div class="quiz-question">
+                    <h3>1. Which monument is known as the "Symbol of Love"?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="a"> Qutub Minar</label>
+                        <label><input type="radio" name="q1" value="b"> Taj Mahal</label>
+                        <label><input type="radio" name="q1" value="c"> Hawa Mahal</label>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz-question">
+                    <h3>2. Classical dance form 'Kathakali' originated from which state?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="a"> Tamil Nadu</label>
+                        <label><input type="radio" name="q2" value="b"> Kerala</label>
+                        <label><input type="radio" name="q2" value="c"> Odisha</label>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="quiz-question">
+                    <h3>3. What is the festival of colors in India called?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="a"> Diwali</label>
+                        <label><input type="radio" name="q3" value="b"> Holi</label>
+                        <label><input type="radio" name="q3" value="c"> Navratri</label>
+                    </div>
+                </div>
+
+                <button type="button" class="quiz-btn" onclick="checkQuiz()">Submit Quiz</button>
+            </form>
+            <div id="quiz-result"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Indian Culture & Heritage Portal. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Quiz Functionality -->
+    <script>
+        function checkQuiz() {
+            // Correct answers definition
+            const answers = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'b'
+            };
+
+            let score = 0;
+            let totalQuestions = Object.keys(answers).length;
+
+            const form = document.forms['heritage-quiz'];
+
+            for (let key in answers) {
+                const selectedOption = form[key].value;
+                if (selectedOption === answers[key]) {
+                    score++;
+                }
+            }
+
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.innerHTML = `You scored ${score} out of ${totalQuestions}!`;
+            
+            if (score === totalQuestions) {
+                resultDiv.style.color = 'green';
+            } else {
+                resultDiv.style.color = '#d35400';
+            }
+        }
+    </script>
+</body>
+</html>

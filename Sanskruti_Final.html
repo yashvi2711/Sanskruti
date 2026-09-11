@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Culture & Heritage Portal</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           1. CSS VARIABLES & CORE RESET
+           ========================================================================== */
+        :root {
+            --primary-saffron: #e65100;
+            --saffron-gradient: linear-gradient(135deg, #ff6f00, #d84315);
+            --gold-accent: #d4af37;
+            --gold-gradient: linear-gradient(135deg, #f39c12, #d4af37);
+            --deep-maroon: #4a0e17;
+            --peacock-blue: #005f73;
+            --terracotta: #8b3a2b;
+            
+            --dark-bg: #120c0e;
+            --card-bg: #ffffff;
+            --light-bg: #fdfbf7;
+            --text-main: #2b2321;
+            --text-muted: #6e625e;
+            
+            --font-title: 'Cinzel', serif;
+            --font-body: 'Poppins', sans-serif;
+            
+            --shadow-sm: 0 4px 12px rgba(74, 14, 23, 0.06);
+            --shadow-lg: 0 12px 30px rgba(74, 14, 23, 0.15);
+            --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image: radial-gradient(var(--gold-accent) 0.5px, transparent 0.5px);
+            background-size: 30px 30px;
+        }
+
+        /* ==========================================================================
+           2. HEADER & NAVIGATION
+           ========================================================================== */
+        header {
+            background-color: rgba(18, 12, 14, 0.92);
+            backdrop-filter: blur(12px);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--gold-accent);
+            box-shadow: var(--shadow-sm);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        nav h1 a {
+            font-family: var(--font-title);
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        nav h1 a span {
+            color: var(--gold-accent);
+        }
+
+        nav h1 a:hover {
+            opacity: 0.9;
+        }
+
+        .nav-right-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 10px;
+        }
+
+        nav ul li a {
+            color: #f3e5ab;
+            text-decoration: none;
+            padding: 8px 18px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-radius: 25px;
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: #fff;
+            background: rgba(212, 175, 55, 0.15);
+            border-color: var(--gold-accent);
+        }
+
+        .music-player-btn {
+            background: var(--gold-gradient);
+            color: var(--dark-bg);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+            transition: var(--transition);
+        }
+
+        .music-player-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.5);
+        }
+
+        /* ==========================================================================
+           3. HERO SECTION
+           ========================================================================== */
+        .hero {
+            background: linear-gradient(180deg, rgba(18, 12, 14, 0.75) 0%, rgba(74, 14, 23, 0.65) 100%), 
+                        url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
+            height: 75vh;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(to top, var(--light-bg), transparent);
+        }
+
+        .hero-badge {
+            background: var(--gold-gradient);
+            color: var(--dark-bg);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 18px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .hero h2 {
+            font-family: var(--font-title);
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 2px 4px 12px rgba(0,0,0,0.6);
+            letter-spacing: 1px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            font-weight: 300;
+            color: #f3e5ab;
+            animation: fadeInUp 1s ease;
+        }
+
+        /* ==========================================================================
+           4. SECTIONS COMMON STYLING
+           ========================================================================== */
+        section {
+            max-width: 1250px;
+            margin: 90px auto;
+            padding: 0 25px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-title);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--deep-maroon);
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-top: 5px;
+        }
+
+        .section-header h2::after {
+            content: '🪷';
+            display: block;
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        /* ==========================================================================
+           5. INTERACTIVE TIMELINE SECTION
+           ========================================================================== */
+        .timeline-wrapper {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .timeline-wrapper::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gold-gradient);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--light-bg);
+            border: 4px solid var(--primary-saffron);
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+            transition: var(--transition);
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+
+        .timeline-item:hover::after {
+            background-color: var(--gold-accent);
+            transform: scale(1.3);
+        }
+
+        .timeline-content {
+            padding: 25px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border-top: 3px solid var(--primary-saffron);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .timeline-date {
+            display: inline-block;
+            font-weight: 700;
+            color: var(--primary-saffron);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .timeline-content h3 {
+            font-family: var(--font-title);
+            color: var(--deep-maroon);
+            margin-bottom: 10px;
+        }
+
+        /* ==========================================================================
+           6. GALLERY & MONUMENT FILTERS
+           ========================================================================== */
+        .monument-filter-blocks {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .filter-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .sub-filter-row {
+            display: none;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 5px;
+        }
+
+        .sub-filter-row.active {
+            display: flex;
+        }
+
+        .monument-btn {
+            background: var(--card-bg);
+            color: var(--deep-maroon);
+            border: 2px solid var(--gold-accent);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .monument-btn:hover, .monument-btn.active {
+            background: var(--saffron-gradient);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 6px 18px rgba(230, 81, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .quiz-sub-btn {
+            background: #fff8e1;
+            border-color: var(--primary-saffron);
+        }
+
+        .quiz-sub-btn:hover, .quiz-sub-btn.active {
+            background: var(--saffron-gradient);
+            color: white;
+        }
+
+        .gallery-container {
+            position: relative;
+        }
+
+        .gallery-grid {
+            display: flex;
+            gap: 25px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 15px 5px 30px 5px;
+            scroll-behavior: smooth;
+        }
+
+        .gallery-grid.hidden {
+            display: none !important;
+        }
+
+        .gallery-grid::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .gallery-grid::-webkit-scrollbar-track {
+            background: #f0e6d2;
+            border-radius: 10px;
+        }
+
+        .gallery-grid::-webkit-scrollbar-thumb {
+            background: var(--gold-gradient);
+            border-radius: 10px;
+        }
+
+        .gallery-item {
+            flex: 0 0 320px;
+            scroll-snap-align: start;
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+        }
+
+        .gallery-item.hidden {
+            display: none !important;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--gold-accent);
+        }
+
+        .img-container {
+            overflow: hidden;
+            position: relative;
+            height: 240px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            padding: 20px;
+            background: white;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--deep-maroon);
+        }
+
+        .gallery-item::after {
+            content: 'Explore Site ↗';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(18, 12, 14, 0.8);
+            color: var(--gold-accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 20px;
+            opacity: 0;
+            transition: var(--transition);
+            backdrop-filter: blur(4px);
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        /* Filter Quiz Containers */
+        .filter-view-container {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .filter-view-container.active {
+            display: block;
+        }
+
+        .quiz-container {
+            background: white;
+            padding: 45px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            max-width: 850px;
+            margin: 0 auto;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+        }
+
+        .quiz-question {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .quiz-question h3 {
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            color: var(--deep-maroon);
+        }
+
+        .options label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            cursor: pointer;
+            padding: 14px 20px;
+            background: #fdfbf7;
+            border: 2px solid #f0e6d2;
+            border-radius: 10px;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .options label:hover {
+            background: #f5eedc;
+            border-color: var(--gold-accent);
+        }
+
+        .options input[type="radio"] {
+            margin-right: 15px;
+            accent-color: var(--primary-saffron);
+            transform: scale(1.3);
+        }
+
+        .options label.correct {
+            background-color: #d4edda !important;
+            border-color: #28a745 !important;
+            color: #155724;
+            font-weight: 600;
+        }
+
+        .options label.incorrect {
+            background-color: #f8d7da !important;
+            border-color: #dc3545 !important;
+            color: #721c24;
+        }
+
+        .quiz-btn {
+            background: var(--saffron-gradient);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border-radius: 35px;
+            cursor: pointer;
+            width: 100%;
+            transition: var(--transition);
+            box-shadow: 0 6px 20px rgba(230, 81, 0, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .quiz-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(230, 81, 0, 0.4);
+        }
+
+        .quiz-result-box {
+            margin-top: 25px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 18px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        /* ==========================================================================
+           7. VIDEO SECTION
+           ========================================================================== */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .video-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-info {
+            padding: 20px;
+        }
+
+        .video-info h3 {
+            font-size: 1.1rem;
+            color: var(--deep-maroon);
+            font-weight: 600;
+        }
+
+        /* ==========================================================================
+           8. OFFICIAL LINKS DIRECTORY
+           ========================================================================== */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .official-link-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .official-link-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--gold-accent);
+        }
+
+        .link-icon {
+            font-size: 2rem;
+            background: rgba(230, 81, 0, 0.1);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .link-text h4 {
+            color: var(--deep-maroon);
+            font-size: 1rem;
+        }
+
+        .link-text p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* ==========================================================================
+           9. FOOTER & BACK TO TOP
+           ========================================================================== */
+        footer {
+            background: var(--dark-bg);
+            color: #d0c0b0;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 100px;
+            border-top: 3px solid var(--gold-accent);
+        }
+
+        footer p {
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: var(--gold-accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        footer a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--saffron-gradient);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.4rem;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* ==========================================================================
+           10. RESPONSIVE DESIGN
+           ========================================================================== */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h2 {
+                font-size: 2.3rem;
+            }
+            .timeline-wrapper::before {
+                left: 20px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 10px;
+                text-align: left !important;
+            }
+            .timeline-item::after {
+                left: 10px !important;
+            }
+            .quiz-container {
+                padding: 25px;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <h1><a href="https://delhitourism.gov.in/" target="_blank" rel="noopener">🛕 <span>Sanskruti</span></a></h1>
+            <div class="nav-right-group">
+                <ul>
+                    <li><a href="#timeline">Timeline</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#videos">Videos</a></li>
+                    <li><a href="#portals">Official Links</a></li>
+                </ul>
+                <button class="music-player-btn" id="musicToggle" onclick="toggleMusic()">
+                    <span>🎵</span> <span id="musicText">Pause Mahabharata Sitar</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <span class="hero-badge">Timeless Legacy</span>
+        <h2>Indian Culture & Heritage</h2>
+        <p>A journey through thousands of years of rich history, architectural marvels, vibrant traditions, and sacred arts.</p>
+    </div>
+
+    <!-- Timeline Section -->
+    <section id="timeline">
+        <div class="section-header">
+            <h2>Chronicles of Time</h2>
+            <p>Key epochs that shaped the sub-continent's legacy</p>
+        </div>
+        <div class="timeline-wrapper">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">2500 BCE – 1500 BCE</span>
+                    <h3>Indus Valley Civilization</h3>
+                    <p>One of the world's earliest urban civilizations known for sophisticated town planning, metallurgy, and trade.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">322 BCE – 185 BCE</span>
+                    <h3>Maurya Dynasty</h3>
+                    <p>The rise of Emperor Ashoka, spreading Buddhism across Asia and establishing iconic rock and pillar edicts.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">319 CE – 543 CE</span>
+                    <h3>The Golden Age (Guptas)</h3>
+                    <p>A flourishing era of classical art, mathematics (discovery of zero), astronomy, and literature.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">1526 CE – 1857 CE</span>
+                    <h3>Mughal & Regional Architecture</h3>
+                    <p>An era of grandeur giving rise to world heritage marvels like the Taj Mahal, Red Fort, and Humayun's Tomb.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery">
+        <div class="section-header">
+            <h2>Heritage Gallery</h2>
+            <p>Scroll horizontally to explore hidden architectural wonders of India</p>
+        </div>
+
+        <!-- Monument Selector Blocks -->
+        <div class="monument-filter-blocks">
+            <div class="filter-row">
+                <button class="monument-btn active" onclick="selectMainMonument('delhi', this)">🏛️ Delhi</button>
+                <button class="monument-btn" onclick="selectMainMonument('gujarat', this)">🕌 Gujarat</button>
+                <button class="monument-btn" onclick="selectMainMonument('madhyapradesh', this)">🏰 Madhya Pradesh</button>
+                <button class="monument-btn" onclick="selectMainMonument('andhrapradesh', this)">🏖️ Andhra Pradesh</button>
+            </div>
+
+            <div class="sub-filter-row active" id="sub-filters-delhi">
+                <button class="monument-btn quiz-sub-btn" onclick="openQuiz('quiz-delhi', this)">❓ How well do you know your state</button>
+            </div>
+
+            <div class="sub-filter-row" id="sub-filters-gujarat">
+                <button class="monument-btn quiz-sub-btn" onclick="openQuiz('quiz-gujarat', this)">❓ How well do you know your state</button>
+            </div>
+
+            <div class="sub-filter-row" id="sub-filters-madhyapradesh">
+                <button class="monument-btn quiz-sub-btn" onclick="openQuiz('quiz-madhyapradesh', this)">❓ How well do you know your state</button>
+            </div>
+
+            <div class="sub-filter-row" id="sub-filters-andhrapradesh">
+                <button class="monument-btn quiz-sub-btn" onclick="openQuiz('quiz-andhrapradesh', this)">❓ How well do you know your state</button>
+            </div>
+        </div>
+
+        <div class="gallery-container">
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Delhi Monuments -->
+                <a href="https://delhitourism.gov.in/dt/unexplored_delhi/moth_mosque.html" target="_blank" rel="noopener" class="gallery-item delhi">
+                    <div class="img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRErpL9vFUrYfZX4Cm-HOi7kKEs5-tlPUe5nr57DE8w3A&s=10" alt="Moth Mosque">
+                    </div>
+                    <div class="gallery-caption">Moth Ki Masjid</div>
+                </a>
+                <a href="https://delhitourism.gov.in/dt/unexplored_delhi/bade_khan_and_chhote_khan_tombs.html" target="_blank" rel="noopener" class="gallery-item delhi">
+                    <div class="img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCsztT6sux5uFd8wKFWXI1GnClGZOr2WI4pueuH1MYrg&s=10" alt="Bade Khan and Chote Khan Tombs">
+                    </div>
+                    <div class="gallery-caption">Bade & Chote Khan Tombs</div>
+                </a>
+                <a href="https://delhitourism.gov.in/dt/unexplored_delhi/mirza_ghalib_ki_haveli.html" target="_blank" rel="noopener" class="gallery-item delhi">
+                    <div class="img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwzMDAEsy9am1Xhp2nnQfylh_nMfONCJWYjg1BeOvXdw&s=10" alt="Mirza Ghalib Ki Haveli">
+                    </div>
+                    <div class="gallery-caption">Mirza Ghalib Ki Haveli</div>
+                </a>
+                <a href="https://delhitourism.gov.in/dt/unexplored_delhi/chor_minar.html" target="_blank" rel="noopener" class="gallery-item delhi">
+                    <div class="img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpcSA7wu9anbKKnIDKhCcHAphQqadXUntKxXSROYMmVMi4L-M7CbJTWHc&s=10" alt="Chor Minar">
+                    </div>
+                    <div class="gallery-caption">Chor Minar</div>
+                </a>
+                <a href="https://delhitourism.gov.in/dt/unexplored_delhi/mughal_period_jharna.html" target="_blank" rel="noopener" class="gallery-item delhi">
+                    <div class="img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0VZ8sfk6kx0pBeOH1N-fO4E-wBydrDYSw0itNM4hpcA&s=10" alt="Mughal Period Jharna">
+                    </div>
+                    <div class="gallery-caption">Mughal Period Jharna</div>
+                </a>
+
+                <!-- Gujarat Monuments -->
+                <a href="https://gujarattourism.com/central-zone/ahmedabad/nalsarovar-bird-sanctuary.html" target="_blank" rel="noopener" class="gallery-item gujarat hidden">
+                    <div class="img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwMBTfl8wuxnN8lJfEuzec37YJ3zdgsjhldPVNhdh6gw&s=10" alt="Nalsarovar Bird Sanctuary">
+                    </div>
+                    <div class="gallery-caption">Nalsarovar Bird Sanctuary</div>
+                </a>
+                <a href="https://gujarattourism.com/central-zone/ahmedabad/hutheesing-jain-temple.html" target="_blank" rel="noopener" class="gallery-item gujarat hidden">
+                    <div class="img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhLF9eDh0OSPqnPg-halaUaFbaZA7HSv2J7kpgwSyL3Q&s=10" alt="Sheth Hutheesing Jain Temple">
+                    </div>
+                    <div class="gallery-caption">Sheth Hutheesing Jain Temple</div>
+                </a>
+                <a href="https://gujarattourism.com/saurashtra/junagadh/adi-kadi-vav-and-navghan-kuwo.html" target="_blank" rel="noopener" class="gallery-item gujarat hidden">
+                    <div class="img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREkZ8l1KgqHNJomg7UXMxMRWjX59A3ryjAql530lv7_g&s=10" alt="Adi-Kadi Vav">
+                    </div>
+                    <div class="gallery-caption">Adi-Kadi Vav</div>
+                </a>
+                <a href="https://gujarattourism.com/north-zone/sabarkantha/polo-forest.html" target="_blank" rel="noopener" class="gallery-item gujarat hidden">
+                    <div class="img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdzECtgDLDy0kcBTUWwKEFTCArzFkUchCBC-G92Ws-CA&s=10" alt="Polo Forest">
+                    </div>
+                    <div class="gallery-caption">Polo Forest</div>
+                </a>
+
+                <!-- Madhya Pradesh Monuments -->
+                <a href="https://www.mptourism.com/destination-khajuraho.php" target="_blank" rel="noopener" class="gallery-item madhyapradesh hidden">
+                    <div class="img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThLr3Z-XzbuIso7PUeA1Z_gxUDWCwPZxalTVWXgEgkDA&s=10" alt="Graceful Khajuraho">
+                    </div>
+                    <div class="gallery-caption">Graceful Khajuraho</div>
+                </a>
+                <a href="https://www.bing.com/ck/a?!&&p=88a4178ef7519b69d27bd5fb7335ce3c8e8aa5f4d80a9c89db673217a2296752JmltdHM9MTc4ODk5ODQwMA&ptn=3&ver=2&hsh=4&fclid=0385ffa9-cf20-64cd-22d4-e824ce1e656b&psq=bhedaghat&u=a1aHR0cHM6Ly93d3cubXB0b3VyaXNtLmNvbS9kZXN0aW5hdGlvbi1iaGVkYWdoYXQucGhw" target="_blank" rel="noopener" class="gallery-item madhyapradesh hidden">
+                    <div class="img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtC3SPP5rjhhHjzjXU28R_OPCOlluYw3zpR9e8-phqEQ&s=10" alt="Bhedaghat">
+                    </div>
+                    <div class="gallery-caption">Bhedaghat</div>
+                </a>
+                <a href="https://www.mptourism.com/destination-tawa.php" target="_blank" rel="noopener" class="gallery-item madhyapradesh hidden">
+                    <div class="img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwP_1Ufrhq9Fe-scvRhRCr0J_2u3YxYIE-oxx3Sz8pJuOTw6K29loPCUIa&s=10" alt="Pristine Tawa & Madai">
+                    </div>
+                    <div class="gallery-caption">Pristine Tawa & Madai</div>
+                </a>
+                <a href="https://www.mptourism.com/destination-rewa.php" target="_blank" rel="noopener" class="gallery-item madhyapradesh hidden">
+                    <div class="img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE4cO64H1Jz-Xdvk7L_e6Ns-L9ZXTzLJdBWihU_AgqIw&s=10" alt="Rewa">
+                    </div>
+                    <div class="gallery-caption">Rewa</div>
+                </a>
+
+                <!-- Andhra Pradesh Monuments -->
+                <a href="https://kadapa.ap.gov.in/tourist-place/gandikota/" target="_blank" rel="noopener" class="gallery-item andhrapradesh hidden">
+                    <div class="img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBNB8snsSrlOP_W9As4U59xytiaPDNrLDU-mVGE5ogIoifEKKdf8jEhm3S&s=10" alt="Gandikota – Papikondalu (Papi Hills)">
+                    </div>
+                    <div class="gallery-caption">Gandikota – Papikondalu (Papi Hills)</div>
+                </a>
+                <a href="https://lambasingi.in/" target="_blank" rel="noopener" class="gallery-item andhrapradesh hidden">
+                    <div class="img-container">
+                        <img src="https://www.trawell.in/admin/images/upload/025326672Lambasingi-viewpoint.jpg" alt="Lambasingi">
+                    </div>
+                    <div class="gallery-caption">Lambasingi</div>
+                </a>
+                <a href="https://www.belumcaves.com/" target="_blank" rel="noopener" class="gallery-item andhrapradesh hidden">
+                    <div class="img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyiXZPZ--de1DThYj5bdSwbYYr_geUf_rMN-YodnOo8UDBwda4kOAI-po&s=10" alt="Belum Caves">
+                    </div>
+                    <div class="gallery-caption">Belum Caves</div>
+                </a>
+                <a href="https://vanadarshani.com/Home" target="_blank" rel="noopener" class="gallery-item andhrapradesh hidden">
+                    <div class="img-container">
+                        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/talakona-waterfall-tirupati-andhra-pradesh-1-attr-hero?qlt=82&ts=1742150676739" alt="Talakona Waterfalls">
+                    </div>
+                    <div class="gallery-caption">Talakona Waterfalls</div>
+                </a>
+            </div>
+
+            <!-- Quiz Filter View for Delhi -->
+            <div id="quiz-delhi-container" class="filter-view-container">
+                <div class="quiz-container">
+                    <form id="heritage-quiz">
+                        <div class="quiz-question" id="group-q1">
+                            <h3>1. According to historical legend, how was the construction of the Moth Ki Masjid funded?</h3>
+                            <div class="options">
+                                <label><input type="radio" name="q1" value="a"> Through a royal decree utilizing treasury gold</label>
+                                <label><input type="radio" name="q1" value="b"> From the revenue generated by multiplying a single lentil (moth) seed</label>
+                                <label><input type="radio" name="q1" value="c"> From taxes levied on silk merchants coming from Persia</label>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question" id="group-q2">
+                            <h3>2. What unique architectural accent highlights the corners of the Bade Khan Tomb in South Extension?</h3>
+                            <div class="options">
+                                <label><input type="radio" name="q2" value="a"> Tapering square corner towers</label>
+                                <label><input type="radio" name="q2" value="b"> Semi-octagonal pilasters topped with domed chattris</label>
+                                <label><input type="radio" name="q2" value="c"> Spiral marble staircases leading to outer minarets</label>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question" id="group-q3">
+                            <h3>3. In which famous alley of Old Delhi's Chandni Chowk area is Mirza Ghalib's historic haveli located?</h3>
+                            <div class="options">
+                                <label><input type="radio" name="q3" value="a"> Dariba Kalan</label>
+                                <label><input type="radio" name="q3" value="b"> Ballimaran</label>
+                                <label><input type="radio" name="q3" value="c"> Kinari Bazaar</label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="quiz-btn" onclick="checkQuiz('delhi')">Submit Answers</button>
+                    </form>
+                    <div id="quiz-result-delhi" class="quiz-result-box"></div>
+                </div>
+            </div>
+
+            <!-- Quiz Filter View for Gujarat -->
+            <div id="quiz-gujarat-container" class="filter-view-container">
+                <div class="quiz-container">
+                    <form id="gujarat-quiz">
+                        <div class="quiz-question" id="group-g1">
+                            <h3>1. Which of the following UNESCO World Heritage stepwells is located in Patan, Gujarat?</h3>
+                            <div class="options">
+                                <label><input type="radio" name="g1" value="a"> Agrasen Ki Baoli</label>
+                                <label><input type="radio" name="g1" value="b"> Rani Ki Vav</label>
+                                <label><input type="radio" name="g1" value="c"> Chand Baori</label>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question" id="group-g2">
+                            <h3>2. Gir National Park in Gujarat is the world's only natural habitat for which animal?</h3>
+                            <div class="options">
+                                <label><input type="radio" name="g2" value="a"> Asiatic Lion</label>
+                                <label><input type="radio" name="g2" value="b"> Bengal Tiger</label>
+                                <label><input type="radio" name="g2" value="c"> One-horned Rhinoceros</label>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question" id="group-g3">
+                            <h3>3. Which traditional folk dance form is famous in Gujarat during Navratri?</h3>
+                            <div class="options">
+                                <label><input type="radio" name="g3" value="a"> Bihu</label>
+                                <label><input type="radio" name="g3" value="b"> Garba</label>
+                                <label><input type="radio" name="g3" value="c"> Ghoomar</label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="quiz-btn" onclick="checkQuiz('gujarat')">Submit Answers</button>
+                    </form>
+                    <div id="quiz-result-gujarat" class="quiz-result-box"></div>
+                </div>
+            </div>
+
+            <!-- Quiz Filter View for Madhya Pradesh -->
+            <div id="quiz-madhyapradesh-container" class="filter-view-container">
+                <div class="quiz-container">
+                    <form id="madhyapradesh-quiz">
+                        <div class="quiz-question" id="group-m1">
+                            <h3>1. Which famous UNESCO World Heritage site in MP is renowned for its intricate Hindu and Jain temple carvings?</h3>
+                            <div class="options">
+                                <label><input type="radio" name="m1" value="a"> Khajuraho</label>
+                                <label><input type="radio" name="m1" value="b"> Sanchi</label>
+                                <label><input type="radio" name="m1" value="c"> Bhimbetka</label>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question" id="group-m2">
+                            <h3>2. Bhedaghat is famous for its stunning river canyon made of which mineral rock?</h3>
+                            <div class="options">
+                                <label><input type="radio" name="m2" value="a"> Granite</label>
+                                <label><input type="radio" name="m2" value="b"> Marble</label>
+                                <label><input type="radio" name="m2" value="c"> Sandstone</label>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question" id="group-m3">
+                            <h3>3. Which city in Madhya Pradesh is famous as the land of the rare White Tigers?</h3>
+                            <div class="options">
+                                <label><input type="radio" name="m3" value="a"> Bhopal</label>
+                                <label><input type="radio" name="m3" value="b"> Rewa</label>
+                                <label><input type="radio" name="m3" value="c"> Gwalior</label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="quiz-btn" onclick="checkQuiz('madhyapradesh')">Submit Answers</button>
+                    </form>
+                    <div id="quiz-result-madhyapradesh" class="quiz-result-box"></div>
+                </div>
+            </div>
+
+            <!-- Quiz Filter View for Andhra Pradesh -->
+            <div id="quiz-andhrapradesh-container" class="filter-view-container">
+                <div class="quiz-container">
+                    <form id="andhrapradesh-quiz">
+                        <div class="quiz-question" id="group-a1">
+                            <h3>1. Which famous gorge in Andhra Pradesh is often called the "Grand Canyon of India"?</h3>
+                            <div class="options">
+                                <label><input type="radio" name="a1" value="a"> Gandikota</label>
+                                <label><input type="radio" name="a1" value="b"> Araku Valley</label>
+                                <label><input type="radio" name="a1" value="c"> Horsley Hills</label>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question" id="group-a2">
+                            <h3>2. Belum Caves are famous for being the second longest cave system in the Indian subcontinent. What are they made of?</h3>
+                            <div class="options">
+                                <label><input type="radio" name="a2" value="a"> Granite</label>
+                                <label><input type="radio" name="a2" value="b"> Black Limestone</label>
+                                <label><input type="radio" name="a2" value="c"> Basalt</label>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question" id="group-a3">
+                            <h3>3. Which hill station in Andhra Pradesh is affectionately known as the "Kashmir of Andhra Pradesh"?</h3>
+                            <div class="options">
+                                <label><input type="radio" name="a3" value="a"> Lambasingi</label>
+                                <label><input type="radio" name="a3" value="b"> Tirupati</label>
+                                <label><input type="radio" name="a3" value="c"> Vijayawada</label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="quiz-btn" onclick="checkQuiz('andhrapradesh')">Submit Answers</button>
+                    </form>
+                    <div id="quiz-result-andhrapradesh" class="quiz-result-box"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="videos">
+        <div class="section-header">
+            <h2>Featured Visual Journeys</h2>
+            <p>Immerse yourself in rich cultural narratives</p>
+        </div>
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/b9STkhzN9qM" title="Indian Cultural Video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Glimpses of Indian Heritage</h3>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/2-5du2oVM5g" title="Indian Cultural Video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Classical Traditions & Arts</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Official Portals Directory -->
+    <section id="portals">
+        <div class="section-header">
+            <h2>Official Portals & Resources</h2>
+            <p>Direct access to tourism and heritage boards</p>
+        </div>
+        <div class="links-grid">
+            <a href="https://delhitourism.gov.in/" target="_blank" rel="noopener" class="official-link-card">
+                <div class="link-icon">🏛️</div>
+                <div class="link-text">
+                    <h4>Delhi Tourism</h4>
+                    <p>Official Government Portal</p>
+                </div>
+            </a>
+            <a href="https://www.incredibleindia.org/" target="_blank" rel="noopener" class="official-link-card">
+                <div class="link-icon">🦚</div>
+                <div class="link-text">
+                    <h4>Incredible India</h4>
+                    <p>Ministry of Tourism</p>
+                </div>
+            </a>
+            <a href="https://asi.nic.in/" target="_blank" rel="noopener" class="official-link-card">
+                <div class="link-icon">📜</div>
+                <div class="link-text">
+                    <h4>Archaeological Survey</h4>
+                    <p>ASI Govt of India</p>
+                </div>
+            </a>
+            <a href="https://indiaculture.gov.in/" target="_blank" rel="noopener" class="official-link-card">
+                <div class="link-icon">🎨</div>
+                <div class="link-text">
+                    <h4>Ministry of Culture</h4>
+                    <p>Cultural preservation</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Indian Culture & Heritage Portal. Powered by <a href="https://delhitourism.gov.in/" target="_blank" rel="noopener">Delhi Tourism</a>. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <!-- Scripts -->
+    <script>
+        /* -------------------------------------------------------------------------- */
+        /* 1. AUDIO SYNTHESIZER                                                      */
+        /* -------------------------------------------------------------------------- */
+        let audioCtx = null;
+        let isPlaying = false;
+        let mahabharataTimer = null;
+        let droneOsc = null;
+        let droneGain = null;
+
+        const mahabharataThemeNotes = [
+            { freq: 220.00, duration: 250 },
+            { freq: 246.94, duration: 250 },
+            { freq: 293.66, duration: 350 },
+            { freq: 329.63, duration: 400 },
+            { freq: 293.66, duration: 250 },
+            { freq: 246.94, duration: 250 },
+            { freq: 220.00, duration: 500 },
+            { freq: 329.63, duration: 300 },
+            { freq: 370.00, duration: 300 },
+            { freq: 440.00, duration: 450 },
+            { freq: 370.00, duration: 300 },
+            { freq: 329.63, duration: 600 },
+            { freq: 220.00, duration: 250 },
+            { freq: 293.66, duration: 250 },
+            { freq: 329.63, duration: 250 },
+            { freq: 440.00, duration: 600 },
+            { freq: 370.00, duration: 300 },
+            { freq: 329.63, duration: 700 }
+        ];
+
+        function playSitarPluck(freq, duration) {
+            if (!audioCtx) return;
+            
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            const filter = audioCtx.createBiquadFilter();
+
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+            filter.type = 'bandpass';
+            filter.frequency.setValueAtTime(freq * 2.2, audioCtx.currentTime);
+            filter.Q.setValueAtTime(4, audioCtx.currentTime);
+
+            gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.45, audioCtx.currentTime + 0.015);
+            gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + (duration / 1000) * 1.8);
+
+            osc.connect(filter);
+            filter.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + (duration / 1000) * 1.8);
+        }
+
+        function startMahabharataRaga() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+
+            droneOsc = audioCtx.createOscillator();
+            droneGain = audioCtx.createGain();
+            droneOsc.type = 'triangle';
+            droneOsc.frequency.setValueAtTime(110.00, audioCtx.currentTime);
+            droneGain.gain.setValueAtTime(0.06, audioCtx.currentTime);
+            droneOsc.connect(droneGain);
+            droneGain.connect(audioCtx.destination);
+            droneOsc.start();
+
+            let noteIdx = 0;
+
+            function playNextNote() {
+                if (!isPlaying) return;
+
+                const currentNote = mahabharataThemeNotes[noteIdx];
+                playSitarPluck(currentNote.freq, currentNote.duration);
+
+                noteIdx = (noteIdx + 1) % mahabharataThemeNotes.length;
+                mahabharataTimer = setTimeout(playNextNote, currentNote.duration + 80);
+            }
+
+            playNextNote();
+        }
+
+        function stopMahabharataRaga() {
+            if (mahabharataTimer) clearTimeout(mahabharataTimer);
+            if (droneOsc) {
+                droneOsc.stop();
+                droneOsc.disconnect();
+            }
+        }
+
+        function toggleMusic() {
+            const btnText = document.getElementById('musicText');
+
+            if (!isPlaying) {
+                isPlaying = true;
+                startMahabharataRaga();
+                btnText.innerText = "Pause Mahabharata Sitar";
+            } else {
+                isPlaying = false;
+                stopMahabharataRaga();
+                btnText.innerText = "Play Mahabharata Sitar";
+            }
+        }
+
+        /* Autoplay logic on page load */
+        function autoPlayAudio() {
+            if (!isPlaying) {
+                isPlaying = true;
+                startMahabharataRaga();
+                const btnText = document.getElementById('musicText');
+                if (btnText) btnText.innerText = "Pause Mahabharata Sitar";
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            autoPlayAudio();
+        });
+
+        /* Browser autoplay policy fallback: Starts audio on first user click/tap if blocked */
+        const enableAudioOnInteraction = () => {
+            if (audioCtx && audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            if (!isPlaying) {
+                autoPlayAudio();
+            }
+            document.removeEventListener('click', enableAudioOnInteraction);
+            document.removeEventListener('keydown', enableAudioOnInteraction);
+            document.removeEventListener('touchstart', enableAudioOnInteraction);
+        };
+
+        document.addEventListener('click', enableAudioOnInteraction);
+        document.addEventListener('keydown', enableAudioOnInteraction);
+        document.addEventListener('touchstart', enableAudioOnInteraction);
+
+        /* -------------------------------------------------------------------------- */
+        /* 2. MONUMENT & QUIZ FILTER LOGIC                                           */
+        /* -------------------------------------------------------------------------- */
+        function selectMainMonument(category, btnElement) {
+            document.querySelectorAll('.filter-row .monument-btn').forEach(btn => btn.classList.remove('active'));
+            if (btnElement) btnElement.classList.add('active');
+
+            document.querySelectorAll('.sub-filter-row').forEach(row => row.classList.remove('active'));
+            document.querySelectorAll('.quiz-sub-btn').forEach(btn => btn.classList.remove('active'));
+
+            const galleryGrid = document.getElementById('gallery-grid');
+            const quizDelhi = document.getElementById('quiz-delhi-container');
+            const quizGujarat = document.getElementById('quiz-gujarat-container');
+            const quizMP = document.getElementById('quiz-madhyapradesh-container');
+            const quizAP = document.getElementById('quiz-andhrapradesh-container');
+
+            quizDelhi.classList.remove('active');
+            quizGujarat.classList.remove('active');
+            quizMP.classList.remove('active');
+            if (quizAP) quizAP.classList.remove('active');
+
+            if (category === 'delhi') {
+                document.getElementById('sub-filters-delhi').classList.add('active');
+                galleryGrid.classList.remove('hidden');
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    item.classList.contains('delhi') ? item.classList.remove('hidden') : item.classList.add('hidden');
+                });
+            } else if (category === 'gujarat') {
+                document.getElementById('sub-filters-gujarat').classList.add('active');
+                galleryGrid.classList.remove('hidden');
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    item.classList.contains('gujarat') ? item.classList.remove('hidden') : item.classList.add('hidden');
+                });
+            } else if (category === 'madhyapradesh') {
+                document.getElementById('sub-filters-madhyapradesh').classList.add('active');
+                galleryGrid.classList.remove('hidden');
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    item.classList.contains('madhyapradesh') ? item.classList.remove('hidden') : item.classList.add('hidden');
+                });
+            } else if (category === 'andhrapradesh') {
+                document.getElementById('sub-filters-andhrapradesh').classList.add('active');
+                galleryGrid.classList.remove('hidden');
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    item.classList.contains('andhrapradesh') ? item.classList.remove('hidden') : item.classList.add('hidden');
+                });
+            }
+        }
+
+        function openQuiz(quizKey, btnElement) {
+            document.querySelectorAll('.quiz-sub-btn').forEach(btn => btn.classList.remove('active'));
+            if (btnElement) btnElement.classList.add('active');
+
+            const galleryGrid = document.getElementById('gallery-grid');
+            const quizDelhi = document.getElementById('quiz-delhi-container');
+            const quizGujarat = document.getElementById('quiz-gujarat-container');
+            const quizMP = document.getElementById('quiz-madhyapradesh-container');
+            const quizAP = document.getElementById('quiz-andhrapradesh-container');
+
+            galleryGrid.classList.add('hidden');
+
+            if (quizKey === 'quiz-delhi') {
+                quizGujarat.classList.remove('active');
+                quizMP.classList.remove('active');
+                if (quizAP) quizAP.classList.remove('active');
+                quizDelhi.classList.add('active');
+            } else if (quizKey === 'quiz-gujarat') {
+                quizDelhi.classList.remove('active');
+                quizMP.classList.remove('active');
+                if (quizAP) quizAP.classList.remove('active');
+                quizGujarat.classList.add('active');
+            } else if (quizKey === 'quiz-madhyapradesh') {
+                quizDelhi.classList.remove('active');
+                quizGujarat.classList.remove('active');
+                if (quizAP) quizAP.classList.remove('active');
+                quizMP.classList.add('active');
+            } else if (quizKey === 'quiz-andhrapradesh') {
+                quizDelhi.classList.remove('active');
+                quizGujarat.classList.remove('active');
+                quizMP.classList.remove('active');
+                if (quizAP) quizAP.classList.add('active');
+            }
+        }
+
+        /* -------------------------------------------------------------------------- */
+        /* 3. QUIZ LOGIC                                                             */
+        /* -------------------------------------------------------------------------- */
+        function checkQuiz(quizType) {
+            let answers = {};
+            let formName = '';
+            let groupPrefix = '';
+            let resultDivId = '';
+
+            if (quizType === 'delhi') {
+                answers = { q1: 'b', q2: 'b', q3: 'b' };
+                formName = 'heritage-quiz';
+                groupPrefix = 'group-q';
+                resultDivId = 'quiz-result-delhi';
+            } else if (quizType === 'gujarat') {
+                answers = { g1: 'b', g2: 'a', g3: 'b' };
+                formName = 'gujarat-quiz';
+                groupPrefix = 'group-g';
+                resultDivId = 'quiz-result-gujarat';
+            } else if (quizType === 'madhyapradesh') {
+                answers = { m1: 'a', m2: 'b', m3: 'b' };
+                formName = 'madhyapradesh-quiz';
+                groupPrefix = 'group-m';
+                resultDivId = 'quiz-result-madhyapradesh';
+            } else if (quizType === 'andhrapradesh') {
+                answers = { a1: 'a', a2: 'b', a3: 'a' };
+                formName = 'andhrapradesh-quiz';
+                groupPrefix = 'group-a';
+                resultDivId = 'quiz-result-andhrapradesh';
+            }
+
+            let score = 0;
+            let totalQuestions = Object.keys(answers).length;
+            const form = document.forms[formName];
+
+            let containerId = 'quiz-delhi-container';
+            if (quizType === 'gujarat') containerId = 'quiz-gujarat-container';
+            if (quizType === 'madhyapradesh') containerId = 'quiz-madhyapradesh-container';
+            if (quizType === 'andhrapradesh') containerId = 'quiz-andhrapradesh-container';
+
+            const currentContainer = document.getElementById(containerId);
+            currentContainer.querySelectorAll('.options label').forEach(label => {
+                label.classList.remove('correct', 'incorrect');
+            });
+
+            let allAnswered = true;
+
+            for (let key in answers) {
+                const selected = form[key].value;
+                const questionContainer = document.getElementById(`${groupPrefix}${key.slice(-1)}`);
+                const labels = questionContainer.querySelectorAll('label');
+
+                if (!selected) {
+                    allAnswered = false;
+                    continue;
+                }
+
+                labels.forEach(label => {
+                    const input = label.querySelector('input');
+                    if (input.value === answers[key]) {
+                        label.classList.add('correct');
+                    }
+                    if (input.checked && input.value !== answers[key]) {
+                        label.classList.add('incorrect');
+                    }
+                });
+
+                if (selected === answers[key]) {
+                    score++;
+                }
+            }
+
+            const resultDiv = document.getElementById(resultDivId);
+            resultDiv.style.display = 'block';
+
+            if (!allAnswered) {
+                resultDiv.innerHTML = "⚠️ Please answer all questions before submitting!";
+                resultDiv.style.color = "#721c24";
+                resultDiv.style.backgroundColor = "#f8d7da";
+                return;
+            }
+
+            resultDiv.innerHTML = `🎉 You scored <strong>${score}</strong> out of <strong>${totalQuestions}</strong>!`;
+            
+            if (score === totalQuestions) {
+                resultDiv.style.color = '#155724';
+                resultDiv.style.backgroundColor = '#d4edda';
+            } else {
+                resultDiv.style.color = '#856404';
+                resultDiv.style.backgroundColor = '#fff3cd';
+            }
+        }
+
+        /* -------------------------------------------------------------------------- */
+        /* 4. BACK TO TOP BUTTON LOGIC                                              */
+        /* -------------------------------------------------------------------------- */
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>
